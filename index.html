@@ -370,21 +370,85 @@ header{
   to{opacity:1;transform:none}
 }
 
+/* ── TABLET ── */
+@media(max-width:900px){
+  .hero{padding:6rem 2rem 5rem}
+}
+
 /* ── MOBILE ── */
-@media(max-width:768px){
-  header{padding:1rem 1.2rem}
+@media(max-width:600px){
+  header{padding:.9rem 1.2rem}
   .logo-sub{display:none}
-  .hero{padding:6rem 1.5rem 5rem}
-  .hero-h1{font-size:clamp(2.4rem,12vw,4rem)}
-  .ring1{width:400px;height:400px}
-  .ring2{width:300px;height:300px}
-  .ring3{width:200px;height:200px}
-  .ring4{width:100px;height:100px}
-  .cl-h,.cl-v,.cl-d1,.cl-d2{width:400px}
-  .cl-v{height:400px}
-  .hero-foot{left:1.5rem;right:1.5rem;bottom:1.8rem}
-  .hdr-btn{padding:.55rem 1rem;font-size:.55rem}
-  .disciplines{gap:.4rem}
+  .logo-name{font-size:.62rem;letter-spacing:.12em}
+
+  .hdr-btn{
+    padding:.5rem .9rem;
+    font-size:.52rem;
+    letter-spacing:.1em;
+  }
+
+  .hero{
+    padding:5.5rem 1.2rem 4.5rem;
+    justify-content:flex-start;
+    padding-top:5.5rem;
+  }
+  .hero-inner{width:100%}
+
+  .hero-label{margin-bottom:1.4rem}
+  .hl-text{font-size:.52rem;letter-spacing:.18em}
+
+  .hero-h1{margin-bottom:1rem}
+  .h1-line1{font-size:clamp(1rem,5vw,1.3rem);margin-bottom:.3rem}
+  .h1-line2{font-size:clamp(2rem,10vw,3rem);-webkit-text-stroke:0}
+  .h1-line3{font-size:clamp(.8rem,4vw,1rem);letter-spacing:.1em;margin-top:.4rem}
+
+  .ornament-div{margin:1.2rem 0 1.2rem}
+  .ornament-div svg{width:180px}
+
+  .hero-sub{
+    font-size:.9rem;
+    max-width:100%;
+    margin-bottom:1.6rem;
+    line-height:1.7;
+  }
+
+  .disciplines{
+    gap:.4rem;
+    margin-bottom:1.6rem;
+  }
+  .disc{
+    font-size:.5rem;
+    padding:.35rem .7rem;
+    letter-spacing:.1em;
+  }
+
+  .tg-btn{
+    width:100%;
+    justify-content:center;
+    padding:1rem 1.5rem;
+    font-size:.65rem;
+    letter-spacing:.1em;
+  }
+
+  .legal{font-size:.58rem}
+
+  .hero-foot{bottom:1.2rem}
+  .hf-suit{font-size:.75rem}
+
+  /* rings scale down */
+  .ring1{width:300px;height:300px}
+  .ring2{width:220px;height:220px}
+  .ring3{width:150px;height:150px}
+  .ring4{width:80px;height:80px}
+  .cl-h,.cl-d1,.cl-d2{width:300px}
+  .cl-v{height:300px}
+}
+
+/* ── SMALL PHONES ── */
+@media(max-width:380px){
+  .h1-line2{font-size:1.85rem}
+  .hero-sub{font-size:.82rem}
+  .tg-btn{font-size:.6rem;padding:.9rem 1rem}
 }
 </style>
 </head>
