@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Покер-клуб · Кыргызстан</title>
+
+<!-- FB PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1596345781609399');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1596345781609399&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --r:#C0392B;
+  --r2:#E8503F;
+  --r3:#8B2217;
+  --r4:rgba(192,57,43,0.12);
+  --y:#E8B84B;
+  --y2:#F5D070;
+  --y3:rgba(232,184,75,0.15);
+  --bg:#0E0A08;
+  --bg2:#140E0A;
+  --t:#F5EDE0;
+  --t2:#A0897A;
+  --t3:#5C4A3E;
+  --ln:rgba(232,184,75,0.14);
+  --ln2:rgba(192,57,43,0.2);
+}
+
+html{height:100%;scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--t);
+  font-family:'Noto Sans',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+  min-height:100vh;
+  cursor:default;
+}
+
+/* ── GRAIN ── */
+body::before{
+  content:'';
+  position:fixed;inset:0;pointer-events:none;z-index:900;
+  opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='0.045'/%3E%3C/svg%3E");
+}
+
+/* ── BG LAYERS ── */
+.bg-layer{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 38%, rgba(139,34,23,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 90%, rgba(232,184,75,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 35% at 10% 10%, rgba(192,57,43,0.07) 0%, transparent 60%),
+    #0E0A08;
+}
+
+/* ── ORNAMENT SVG (kyrgyz pattern) ── */
+.ornament-top{
+  position:fixed;top:0;left:0;right:0;z-index:5;
+  height:5px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--r) 0px, var(--r) 12px,
+    var(--y) 12px, var(--y) 16px,
+    var(--r) 16px, var(--r) 28px,
+    var(--bg) 28px, var(--bg) 32px
+  );
+  opacity:.7;
+}
+
+.ornament-bottom{
+  position:fixed;bottom:0;left:0;right:0;z-index:5;
+  height:3px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--r3) 0px, var(--r3) 8px,
+    var(--y) 8px, var(--y) 11px,
+    var(--r3) 11px, var(--r3) 19px,
+    var(--bg) 19px, var(--bg) 22px
+  );
+  opacity:.5;
+}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:5px;left:0;right:0;z-index:200;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.3rem 3rem;
+  background:linear-gradient(to bottom, rgba(14,10,8,.9) 50%, transparent);
+  backdrop-filter:blur(16px);
+}
+
+.logo{
+  display:flex;align-items:center;gap:.8rem;
+  text-decoration:none;
+}
+.logo-emblem{
+  width:38px;height:38px;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.logo-emblem svg{width:38px;height:38px}
+
+.logo-name{
+  font-family:'Unbounded',sans-serif;
+  font-size:.72rem;font-weight:600;
+  color:var(--t);
+  letter-spacing:.18em;text-transform:uppercase;
+  line-height:1.3;
+}
+.logo-sub{
+  font-family:'Noto Sans',sans-serif;
+  font-size:.6rem;font-weight:300;
+  color:var(--t3);
+  letter-spacing:.22em;text-transform:uppercase;
+  display:block;
+  margin-top:.15rem;
+}
+
+.hdr-btn{
+  display:inline-flex;align-items:center;gap:.65rem;
+  background:var(--r);
+  color:#fff;
+  text-decoration:none;
+  font-family:'Unbounded',sans-serif;
+  font-size:.6rem;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:.65rem 1.5rem;
+  border:.5px solid var(--r2);
+  transition:all .2s;
+  position:relative;overflow:hidden;
+}
+.hdr-btn::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),transparent);
+}
+.hdr-btn:hover{background:var(--r2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:10;
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:7rem 2rem 6rem;
+  overflow:hidden;
+}
+
+/* background pattern — tunduk inspired rings */
+.hero-rings{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.ring{
+  position:absolute;
+  border-radius:50%;
+  border-style:solid;
+  border-color:rgba(232,184,75,0.055);
+}
+.ring1{width:700px;height:700px;border-width:.5px;}
+.ring2{width:520px;height:520px;border-width:.5px;border-color:rgba(192,57,43,0.07);}
+.ring3{width:340px;height:340px;border-width:.5px;}
+.ring4{width:180px;height:180px;border-width:1px;border-color:rgba(232,184,75,0.1);}
+
+/* kyrgyz ornamental cross lines */
+.cross-line{
+  position:absolute;
+  background:rgba(232,184,75,0.04);
+  pointer-events:none;
+}
+.cl-h{width:700px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cl-v{width:1px;height:700px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cl-d1{width:700px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg)}
+.cl-d2{width:700px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg)}
+
+/* content */
+.hero-inner{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+
+/* top label */
+.hero-label{
+  display:inline-flex;align-items:center;gap:.7rem;
+  margin-bottom:2.5rem;
+  opacity:0;animation:up .8s .2s ease forwards;
+}
+.hl-flag{
+  font-size:1.1rem;line-height:1;
+  filter:drop-shadow(0 0 6px rgba(192,57,43,.4));
+}
+.hl-text{
+  font-family:'Unbounded',sans-serif;
+  font-size:.6rem;font-weight:300;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--t3);
+}
+.hl-sep{
+  width:24px;height:1px;
+  background:linear-gradient(to right, var(--r3), transparent);
+}
+
+/* MAIN HEADING */
+.hero-h1{
+  font-family:'Unbounded',sans-serif;
+  font-weight:900;
+  font-size:clamp(2.8rem,7.5vw,6.8rem);
+  line-height:.95;
+  letter-spacing:-.02em;
+  margin-bottom:1.5rem;
+  opacity:0;animation:up .9s .4s ease forwards;
+}
+.h1-line1{
+  display:block;
+  color:var(--t);
+  font-size:clamp(1.4rem,3.5vw,3rem);
+  font-weight:300;
+  letter-spacing:.04em;
+  color:var(--t2);
+  margin-bottom:.3rem;
+  font-family:'Noto Sans',sans-serif;
+}
+.h1-line2{
+  display:block;
+  color:var(--r);
+  text-shadow:0 0 60px rgba(192,57,43,.35);
+  -webkit-text-stroke:.5px rgba(232,80,63,.3);
+}
+.h1-line3{
+  display:block;
+  font-size:clamp(1.2rem,3vw,2.6rem);
+  font-weight:300;
+  color:var(--y);
+  letter-spacing:.18em;
+  font-family:'Noto Sans',sans-serif;
+  margin-top:.5rem;
+  text-shadow:0 0 40px rgba(232,184,75,.2);
+}
+
+/* kyrgyz ornament divider */
+.ornament-div{
+  margin:2.2rem 0 2rem;
+  display:flex;align-items:center;gap:0;
+  opacity:0;animation:up .8s .6s ease forwards;
+}
+.ornament-div svg{width:220px;height:16px}
+
+/* sub */
+.hero-sub{
+  font-size:clamp(.88rem,1.4vw,1.05rem);
+  color:var(--t2);
+  line-height:1.8;
+  max-width:400px;
+  font-weight:300;
+  margin-bottom:3rem;
+  opacity:0;animation:up .8s .75s ease forwards;
+}
+
+/* disciplines */
+.disciplines{
+  display:flex;align-items:center;gap:.5rem;
+  flex-wrap:wrap;justify-content:center;
+  margin-bottom:3rem;
+  opacity:0;animation:up .8s .88s ease forwards;
+}
+.disc{
+  font-family:'Unbounded',sans-serif;
+  font-size:.58rem;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--t3);
+  border:.5px solid rgba(255,255,255,.07);
+  padding:.4rem .9rem;
+  transition:all .2s;
+}
+.disc:hover{color:var(--t);border-color:var(--t3)}
+.disc-sep{color:var(--r3);font-size:.7rem;opacity:.6}
+
+/* CTA */
+.cta-block{
+  display:flex;flex-direction:column;align-items:center;gap:1.1rem;
+  opacity:0;animation:up .8s 1s ease forwards;
+}
+
+.tg-btn{
+  display:inline-flex;align-items:center;gap:.9rem;
+  background:var(--r);
+  color:#fff;
+  text-decoration:none;
+  font-family:'Unbounded',sans-serif;
+  font-size:.75rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:1.15rem 2.8rem;
+  border:.5px solid var(--r2);
+  position:relative;overflow:hidden;
+  transition:transform .2s,box-shadow .25s;
+}
+.tg-btn::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.1) 0%,transparent 50%);
+}
+.tg-btn::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:var(--y);
+  transform:scaleX(0);
+  transition:transform .25s;
+}
+.tg-btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(192,57,43,.3)}
+.tg-btn:hover::after{transform:scaleX(1)}
+.tg-ico{width:20px;height:20px;flex-shrink:0}
+
+.legal{
+  font-size:.63rem;
+  color:var(--t3);
+  letter-spacing:.14em;text-transform:uppercase;
+}
+
+/* ── BOTTOM STRIP ── */
+.hero-foot{
+  position:absolute;
+  bottom:2.5rem;left:3rem;right:3rem;
+  display:flex;justify-content:center;align-items:center;
+  opacity:0;animation:up .7s 1.3s ease forwards;
+  z-index:2;
+}
+.hf-side{
+  font-family:'Unbounded',sans-serif;
+  font-size:.55rem;font-weight:300;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--t3);
+}
+.hf-center{
+  display:flex;align-items:center;gap:.6rem;
+}
+.hf-suit{
+  font-size:.85rem;color:var(--t3);opacity:.45;
+  transition:all .3s;
+}
+.hf-suit:hover{opacity:1;color:var(--r);transform:scale(1.2)}
+
+/* ── ANIMATIONS ── */
+@keyframes up{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:none}
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  header{padding:1rem 1.2rem}
+  .logo-sub{display:none}
+  .hero{padding:6rem 1.5rem 5rem}
+  .hero-h1{font-size:clamp(2.4rem,12vw,4rem)}
+  .ring1{width:400px;height:400px}
+  .ring2{width:300px;height:300px}
+  .ring3{width:200px;height:200px}
+  .ring4{width:100px;height:100px}
+  .cl-h,.cl-v,.cl-d1,.cl-d2{width:400px}
+  .cl-v{height:400px}
+  .hero-foot{left:1.5rem;right:1.5rem;bottom:1.8rem}
+  .hdr-btn{padding:.55rem 1rem;font-size:.55rem}
+  .disciplines{gap:.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- BG -->
+<div class="bg-layer"></div>
+<div class="ornament-top"></div>
+<div class="ornament-bottom"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <!-- Kyrgyz tunduk-inspired emblem -->
+    <div class="logo-emblem">
+      <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="19" cy="19" r="18" stroke="rgba(192,57,43,0.5)" stroke-width=".5"/>
+        <circle cx="19" cy="19" r="13" stroke="rgba(232,184,75,0.3)" stroke-width=".5"/>
+        <circle cx="19" cy="19" r="3" fill="rgba(232,184,75,0.6)"/>
+        <!-- 8 spokes like tunduk -->
+        <line x1="19" y1="1" x2="19" y2="37" stroke="rgba(192,57,43,0.25)" stroke-width=".5"/>
+        <line x1="1" y1="19" x2="37" y2="19" stroke="rgba(192,57,43,0.25)" stroke-width=".5"/>
+        <line x1="5" y1="5" x2="33" y2="33" stroke="rgba(232,184,75,0.2)" stroke-width=".5"/>
+        <line x1="33" y1="5" x2="5" y2="33" stroke="rgba(232,184,75,0.2)" stroke-width=".5"/>
+        <!-- corner diamonds -->
+        <polygon points="19,4 21,7 19,10 17,7" fill="rgba(192,57,43,0.7)"/>
+        <polygon points="34,19 31,21 28,19 31,17" fill="rgba(192,57,43,0.7)"/>
+        <polygon points="19,34 21,31 19,28 17,31" fill="rgba(192,57,43,0.7)"/>
+        <polygon points="4,19 7,21 10,19 7,17" fill="rgba(192,57,43,0.7)"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-name">Poker Club</div>
+      <span class="logo-sub">Кыргызстан</span>
+    </div>
+  </div>
+
+  <a href="https://t.me/+WstRWb5Vwm9iYTAy" class="hdr-btn" target="_blank" rel="noopener"
+     onclick="fbq('track','Lead',{content_name:'header'})">
+    Войти в клуб
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Tunduk-inspired rings -->
+  <div class="hero-rings">
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+    <div class="ring ring4"></div>
+    <div class="cross-line cl-h"></div>
+    <div class="cross-line cl-v"></div>
+    <div class="cross-line cl-d1"></div>
+    <div class="cross-line cl-d2"></div>
+  </div>
+
+  <div class="hero-inner">
+
+    <!-- location -->
+    <div class="hero-label">
+      <div class="hl-sep"></div>
+      <span class="hl-flag">🇰🇬</span>
+      <span class="hl-text">Кыргызстан · Закрытый клуб</span>
+      <div class="hl-sep" style="background:linear-gradient(to left,var(--r3),transparent)"></div>
+    </div>
+
+    <!-- heading -->
+    <div class="hero-h1">
+      <span class="h1-line1">Покер-клуб</span>
+      <span class="h1-line2">КЫРГЫЗСТАНЕ</span>
+      <span class="h1-line3">в каждой партии — серьёзная игра</span>
+    </div>
+
+    <!-- kyrgyz ornament divider SVG -->
+    <div class="ornament-div">
+      <svg viewBox="0 0 220 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="8" x2="68" y2="8" stroke="rgba(192,57,43,0.3)" stroke-width=".5"/>
+        <polygon points="72,8 78,4 84,8 78,12" fill="rgba(192,57,43,0.5)"/>
+        <polygon points="90,8 96,3 102,8 96,13" fill="rgba(232,184,75,0.6)" stroke="rgba(232,184,75,0.3)" stroke-width=".5"/>
+        <rect x="107" y="5" width="6" height="6" fill="rgba(192,57,43,0.5)" transform="rotate(45 110 8)"/>
+        <polygon points="118,8 124,3 130,8 124,13" fill="rgba(232,184,75,0.6)" stroke="rgba(232,184,75,0.3)" stroke-width=".5"/>
+        <polygon points="136,8 142,4 148,8 142,12" fill="rgba(192,57,43,0.5)"/>
+        <line x1="152" y1="8" x2="220" y2="8" stroke="rgba(192,57,43,0.3)" stroke-width=".5"/>
+      </svg>
+    </div>
+
+    <!-- sub -->
+    <p class="hero-sub">
+      Закрытый покер-клуб для игроков Кыргызстана.<br>
+      Живые столы, честная игра,<br>
+      лучшая бонусная система в стране.
+    </p>
+
+    <!-- disciplines -->
+    <div class="disciplines">
+      <span class="disc">Texas Hold'em</span>
+      <span class="disc-sep">◆</span>
+      <span class="disc">Omaha</span>
+      <span class="disc-sep">◆</span>
+      <span class="disc">Турниры</span>
+      <span class="disc-sep">◆</span>
+      <span class="disc">24 / 7</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <a href="https://t.me/+WstRWb5Vwm9iYTAy" class="tg-btn" target="_blank" rel="noopener"
+         onclick="fbq('track','Lead',{content_name:'hero_cta'})">
+        <svg class="tg-ico" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.927 6.835-1.69 7.963c-.127.56-.46.697-.934.434l-2.576-1.898-1.244 1.198c-.138.138-.254.254-.52.254l.186-2.636 4.802-4.337c.208-.185-.045-.288-.324-.103L8.261 14.17l-2.541-.79c-.554-.173-.565-.554.116-.82l9.684-3.733c.46-.168.864.113.407.808z" fill="white"/>
+        </svg>
+        Вступить в Telegram
+      </a>
+      <span class="legal">18+ · Только для совершеннолетних</span>
+    </div>
+
+  </div>
+
+  <!-- bottom strip -->
+  <div class="hero-foot">
+    <div class="hf-center">
+      <span class="hf-suit">♠</span>
+      <span class="hf-suit">♥</span>
+      <span class="hf-suit">♣</span>
+      <span class="hf-suit">♦</span>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
